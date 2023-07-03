@@ -32,36 +32,3 @@
         </tr>
     </tbody>
 </table>
-@*table class="table">
-    <thead>
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Product</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Price</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var cartProduct in Model)
-        {
-            <tr>
-                <th scope="row">@cartProduct.Id</th>
-                <th scope="row">@cartProduct.Product?.Name</th>
-                <td>@cartProduct.Quantity</td>
-                <td>@cartProduct.Price.ToString("C")</td>
-            </tr>
-        }
-        <tr>
-            <th scope="row" colspan="3" class="text-right">Total:</th>
-            <td class="text-right">@Model.Sum(c => c.Price).ToString("C")</td>
-        </tr>
-        <tr>
-            <th scope="row" colspan="3" class="text-right">KDV tutarı (18%):</th>
-            <td class="text-right">@Model.Sum(c => c.Price) * 0.18M)</td>
-        </tr>
-        <tr>
-            <th scope="row" colspan="3" class="text-right">Genel Toplam (KDV Dahil):</th>
-            <td class="text-right">@((Model.Sum(c => c.Price) * 1.18M).ToString("C"))</td>
-        </tr>
-    </tbody>
-</table>*@
